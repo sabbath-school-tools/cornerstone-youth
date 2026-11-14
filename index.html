@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Cornerstone Youth Lessons</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Inter:wght@400;600;700&display=swap">
+<style>
+/* Varsity preppy-pop: cobalt, tangerine and lime on cream. Cards like team jerseys, newest first. */
+:root {
+  --bg: #FFF8EC; --card: #FFFFFF; --ink: #14161F; --muted: #555A6B; --line: #EADFCB;
+  --cobalt: #1F4FD8; --tangerine: #F2700F; --lime: #B9E43C; --on-cobalt: #FFFFFF;
+  --display: "Bricolage Grotesque", "Arial Black", "Segoe UI", sans-serif;
+  --body: "Inter", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --bg: #0F1424; --card: #171E33; --ink: #F4F1E8; --muted: #A9AFC2; --line: #27304A; --cobalt: #7FA2FF; --tangerine: #FF9A4D; --lime: #C8F060; --on-cobalt: #0F1424; color-scheme: dark; }
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--body); font-size: 17px; line-height: 1.55; }
+.wrap { max-width: 760px; margin: 0 auto; padding: 44px 18px 64px; }
+.tag { display: inline-block; background: var(--lime); color: #14161F; font-weight: 700; font-size: 13px; letter-spacing: .08em; text-transform: uppercase; padding: 4px 10px; border-radius: 6px; margin: 0; }
+h1 { font-family: var(--display); font-weight: 800; font-size: clamp(38px, 8vw, 58px); line-height: 1.02; margin: 14px 0 0; color: var(--cobalt); letter-spacing: -.01em; }
+h1 span { color: var(--tangerine); }
+.dek { margin: 16px 0 0; max-width: 34em; color: var(--muted); }
+.grid { list-style: none; margin: 34px 0 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; }
+.card { background: var(--card); border: 2px solid var(--line); border-radius: 16px; padding: 20px; display: flex; flex-direction: column; gap: 8px; border-top: 8px solid var(--cobalt); }
+.card:nth-child(even) { border-top-color: var(--tangerine); }
+.top { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+.num { font-family: var(--display); font-weight: 800; font-size: 15px; color: var(--muted); letter-spacing: .06em; text-transform: uppercase; }
+.new { background: var(--lime); color: #14161F; font-weight: 700; font-size: 12px; text-transform: uppercase; letter-spacing: .08em; padding: 2px 8px; border-radius: 999px; }
+.card h2 { font-family: var(--display); font-weight: 800; font-size: 26px; line-height: 1.1; margin: 0; }
+.card p { margin: 0; color: var(--muted); font-size: 15.5px; }
+.card a { margin-top: auto; align-self: flex-start; background: var(--cobalt); color: var(--on-cobalt); text-decoration: none; font-weight: 700; padding: 10px 16px; border-radius: 10px; }
+.card a:focus-visible { outline: 3px solid var(--tangerine); outline-offset: 2px; }
+footer { margin-top: 44px; padding-top: 16px; border-top: 2px solid var(--line); color: var(--muted); font-size: 13.5px; display: grid; gap: 6px; }
+footer p { margin: 0; }
+@media (max-width: 480px) { .grid { grid-template-columns: 1fr; } .wrap { padding-top: 32px; } }
+</style>
+</head>
+<body>
+<main class="wrap">
+  <p class="tag">Youth Sabbath School · Ages 14–18</p>
+  <h1>Cornerstone <span>Youth Lessons</span></h1>
+  <p class="dek">One interactive page for each week's Cornerstone Connections lesson. Answer the questions, play the activities, then take the quiz. Works on any phone or computer, and your answers stay on your device.</p>
+
+  <ol class="grid">
+    <li class="card">
+      <div class="top"><span class="num">Lesson 7 · Nov 14</span><span class="new">Latest</span></div>
+      <h2>The World’s Worst Terrorist</h2>
+      <p>Revelation 12:17, the last days, and how to stay on guard.</p>
+      <a href="lessons/7-worlds-worst-terrorist.html">Open lesson</a>
+    </li>
+    <li class="card">
+      <div class="top"><span class="num">Lesson 6 · Nov 7</span></div>
+      <h2>True Power</h2>
+      <p>Revelation 13 and who really holds the power.</p>
+      <a href="lessons/6-true-power.html">Open lesson</a>
+    </li>
+    <li class="card">
+      <div class="top"><span class="num">Lesson 5 · Oct 31</span></div>
+      <h2>The Deadly Lie</h2>
+      <p>Genesis 3 and what happens when we die.</p>
+      <a href="lessons/5-the-deadly-lie.html">Open lesson</a>
+    </li>
+    <li class="card">
+      <div class="top"><span class="num">Lesson 4 · Oct 24</span></div>
+      <h2>Good Over Evil</h2>
+      <p>Mark 5 and Jesus’ power over evil.</p>
+      <a href="lessons/4-good-over-evil.html">Open lesson</a>
+    </li>
+  </ol>
+
+  <footer>
+    <p>Study pages based on Cornerstone Connections. For class study.</p>
+    <p>Scripture quotations marked NKJV are taken from the New King James Version®. Copyright © 1982 by Thomas Nelson. Used by permission. All rights reserved.</p>
+  </footer>
+</main>
+</body>
+</html>
