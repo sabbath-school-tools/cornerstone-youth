@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Feedback · Cornerstone Youth Lessons</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,800&family=Inter:wght@400;600;700&display=swap">
+<style>
+/* Youth feedback form (user, 2026-11-20). The front page and every lesson have one button here. */
+:root {
+  --bg: #FFF8EC; --card: #FFFFFF; --ink: #14161F; --muted: #555A6B; --line: #EADFCB;
+  --cobalt: #1F4FD8; --tangerine: #F2700F; --lime: #B9E43C; --on-cobalt: #FFFFFF; --ok: #1F6B45; --bad: #A3261F;
+  --display: "Bricolage Grotesque", "Arial Black", "Segoe UI", sans-serif;
+  --body: "Inter", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --bg: #0F1424; --card: #171E33; --ink: #F4F1E8; --muted: #A9AFC2; --line: #27304A; --cobalt: #7FA2FF; --tangerine: #FF9A4D; --lime: #C8F060; --on-cobalt: #0F1424; --ok: #8FD3AE; --bad: #F2A199; color-scheme: dark; }
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--body); font-size: 17px; line-height: 1.55; }
+a { color: inherit; text-underline-offset: 3px; }
+:focus-visible { outline: 3px solid var(--tangerine); outline-offset: 2px; }
+.wrap { max-width: 760px; margin: 0 auto; padding: 32px 18px 64px; }
+.back { font-weight: 700; font-size: 15px; color: var(--cobalt); }
+.tag { display: inline-block; background: var(--lime); color: #14161F; font-weight: 700; font-size: 13px; letter-spacing: .08em; text-transform: uppercase; padding: 4px 10px; border-radius: 6px; margin: 28px 0 0; }
+h1 { font-family: var(--display); font-weight: 800; font-size: clamp(36px, 8vw, 54px); line-height: 1.02; margin: 14px 0 0; color: var(--cobalt); letter-spacing: -.01em; }
+h1 span { color: var(--tangerine); }
+.lead { margin: 16px 0 0; max-width: 34em; color: var(--muted); }
+
+form { display: grid; gap: 22px; margin-top: 30px; padding: 22px; background: var(--card); border: 2px solid var(--line); border-top: 8px solid var(--cobalt); border-radius: 16px; }
+label, legend { display: block; padding: 0; font-weight: 700; font-size: 15px; }
+label small { font-weight: 400; font-size: 14px; color: var(--muted); }
+select, textarea { display: block; width: 100%; min-height: 48px; margin-top: 6px; padding: 11px 12px; border: 2px solid var(--line); border-radius: 10px;
+  background: var(--bg); color: var(--ink); font: 400 16px/1.45 var(--body); }
+select:focus, textarea:focus { border-color: var(--cobalt); }
+textarea { resize: vertical; }
+fieldset { margin: 0; padding: 0; border: 0; min-width: 0; }
+.kinds { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+.kinds label { position: relative; }
+.kinds input { position: absolute; inset: 0; width: 100%; height: 100%; margin: 0; opacity: 0; cursor: pointer; }
+.kinds span { display: inline-flex; align-items: center; min-height: 44px; padding: 0 16px; border: 2px solid var(--cobalt); border-radius: 10px; color: var(--cobalt); font-weight: 700; font-size: 15px; }
+.kinds input:checked + span { background: var(--cobalt); color: var(--on-cobalt); }
+.kinds input:focus-visible + span { outline: 3px solid var(--tangerine); outline-offset: 2px; }
+.send { justify-self: start; min-height: 48px; padding: 0 22px; border: 0; border-radius: 10px; background: var(--cobalt); color: var(--on-cobalt); font: 700 16px/1 var(--body); cursor: pointer; }
+.send:disabled { opacity: .6; cursor: default; }
+.status { margin: 0; min-height: 1.6em; font-weight: 700; }
+.status.ok { color: var(--ok); }
+.status.bad { color: var(--bad); }
+.alt { margin: 0; font-size: 14px; color: var(--muted); }
+footer { margin-top: 36px; padding-top: 16px; border-top: 2px solid var(--line); color: var(--muted); font-size: 13.5px; }
+footer p { margin: 0; }
+</style>
+</head>
+<body>
+<main class="wrap">
+  <a class="back" href="./">← All lessons</a>
+  <p class="tag">Youth Sabbath School · Ages 14–18</p>
+  <h1>Tell us what <span>you think</span></h1>
+  <p class="lead">Was something confusing, boring, or not working? Did a lesson help you? Tell us straight. It is anonymous: no name or email is asked.</p>
+
+  <form id="fbForm" novalidate>
+    <label>Which lesson?
+      <select name="lesson"><option>The whole youth website</option></select>
+    </label>
+    <fieldset>
+      <legend>How was it?</legend>
+      <div class="kinds">
+        <label><input type="radio" name="kind" value="It helped me"><span>It helped me</span></label>
+        <label><input type="radio" name="kind" value="Some parts were unclear"><span>Some parts were unclear</span></label>
+        <label><input type="radio" name="kind" value="Something didn't work"><span>Something didn’t work</span></label>
+        <label><input type="radio" name="kind" value="I have an idea"><span>I have an idea</span></label>
+      </div>
+    </fieldset>
+    <label>Tell us more <small>(optional: which part? what happened?)</small>
+      <textarea name="msg" rows="5" maxlength="2000"></textarea>
+    </label>
+    <button class="send" type="submit">Send feedback</button>
+    <p class="status" id="fbStatus" role="status"></p>
+    <p class="alt">If the button does not work, <a href="https://docs.google.com/forms/d/e/1FAIpQLScdCoY3biRh0gKw0rfsfuyOT5RL-dr4Mj_ozlb2z6i2_X2u4w/viewform">open the feedback form</a> instead.</p>
+  </form>
+
+  <footer>
+    <p>Cornerstone Youth Lessons · <a href="./">All lessons</a></p>
+  </footer>
+</main>
+<script>
+/* Answers go to the same Google Form "Lesson feedback" as the adult site; youth answers say "Cornerstone" in the
+   lesson and "youth site" in the details, so they stay apart from the adults' when the sheet is read.
+   A lesson's button opens this page as feedback.html?lesson=8, so the form starts with it chosen.
+   shortcut: sent with mode "no-cors", so the page only knows the request left; upgrade to a relay if answers go missing. */
+(function () {
+  var SEND = "https://docs.google.com/forms/d/e/1FAIpQLScdCoY3biRh0gKw0rfsfuyOT5RL-dr4Mj_ozlb2z6i2_X2u4w/formResponse";
+  var form = document.getElementById("fbForm"), status = document.getElementById("fbStatus"), pick = form.lesson;
+  var btn = form.querySelector(".send"), want = (new URLSearchParams(location.search).get("lesson") || "").replace(/\D/g, "");
+  // the lesson picker lists the lessons on the front page, newest first
+  fetch("./").then(function (r) { return r.text(); }).then(function (html) {
+    var doc = new DOMParser().parseFromString(html, "text/html");
+    [].forEach.call(doc.querySelectorAll(".card"), function (li) {
+      var n = (li.querySelector(".num").textContent.match(/\d+/) || [""])[0];
+      var o = new Option("Cornerstone Lesson " + n + ": " + li.querySelector("h2").textContent);
+      o.dataset.n = n;
+      pick.add(o);
+    });
+  }).catch(function () {}).then(function () {
+    if (!want) return;
+    var o = [].filter.call(pick.options, function (x) { return x.dataset.n === want; })[0];
+    if (!o) { o = new Option("Cornerstone Lesson " + want); o.dataset.n = want; pick.add(o); }  // front page unreachable: still name the lesson
+    o.selected = true;
+  });
+  function say(text, cls) { status.textContent = text; status.className = "status" + (cls ? " " + cls : ""); }
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    var kind = form.querySelector("input[name=kind]:checked"), msg = form.msg.value.trim();
+    if (!kind && !msg) { say("Choose an answer or write a few words first.", "bad"); return; }
+    var body = new URLSearchParams();
+    body.append("entry.335041523", pick.selectedIndex === 0 ? "Cornerstone: " + pick.value : pick.value);
+    body.append("entry.1723729585", (kind ? "[" + kind.value + "] " : "") + msg);
+    body.append("entry.1691737280", [want ? "youth site, from lesson " + want : "youth site", "English",
+      matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light", innerWidth + "x" + innerHeight, navigator.userAgent].join(" | "));
+    btn.disabled = true; say("Sending…");
+    fetch(SEND, { method: "POST", mode: "no-cors", body: body })
+      .then(function () { form.msg.value = ""; if (kind) kind.checked = false; say("Thank you. Your feedback was sent.", "ok"); })
+      .catch(function () { say("It could not be sent. Check your internet connection and try again.", "bad"); })
+      .then(function () { btn.disabled = false; });
+  });
+})();
+</script>
+</body>
+</html>
